@@ -1,9 +1,13 @@
-
-var args = process.argv.slice(2)
-
+/*
+Author: LiJie, Su
+Language: JavaScript v14.16.1
+Email: ls8513a@student.american.edu
+Function description:
+	Read a list of numbers and convert it to words.
+*/
 function convertNumber_to_words(item,index,arr){
-	let tmpString=""
-	for(let i of item){
+	let tmpString="" //tmpString will replace the item in args array 
+	for(let i of item){ //convert the number one by one
 		switch(i){
 			case "0":
 				tmpString+="Zero"
@@ -41,9 +45,16 @@ function convertNumber_to_words(item,index,arr){
 }
 
 function stdout(item,index,array){
-	process.stdout.write(item+" ")
+	if(index!=array.length-1) { process.stdout.write(item+", ")} //check item is last or not
+	else{ process.stdout.write(item)}
 }
 
-args.forEach(convertNumber_to_words)
-args.forEach(stdout)
+var main=function(){ //assign main function to variable
+	var args = process.argv.slice(2) //get rid of folder directory
+	args.forEach(convertNumber_to_words)
+	args.forEach(stdout)
+}
 
+if (require.main === module) { //check is main executing or not
+	main()
+}
