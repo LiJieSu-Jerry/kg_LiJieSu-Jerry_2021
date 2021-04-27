@@ -9,15 +9,15 @@ Function:
 
 To use it, just simply execute command with arguments in your console
 ```
-**node main.js (arguments)**
+node main.js (arguments)
 ```
 For example:
 ```
-**node main.js 1 23 456 7890**
+node main.js 1 23 456 7890
 ```
 
 The auto test is using mocha framework. Just simply execute
 ```
-**mocha main.test.js**
+mocha main.test.js
 ```
 
