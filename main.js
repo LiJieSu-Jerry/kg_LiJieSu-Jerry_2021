@@ -44,17 +44,20 @@ function convertNumber_to_words(item,index,arr){
 	arr[index]=tmpString
 }
 
-function stdout(item,index,array){
-	if(index!=array.length-1) { process.stdout.write(item+", ")} //check item is last or not
-	else{ process.stdout.write(item)}
+function array_to_string(args){
+	args=args.join(', ')
+	return args
 }
 
 var main=function(){ //assign main function to variable
 	var args = process.argv.slice(2) //get rid of folder directory
 	args.forEach(convertNumber_to_words)
-	args.forEach(stdout)
+	process.stdout.write(array_to_string(args))
 }
 
 if (require.main === module) { //check is main executing or not
 	main()
 }
+
+exports.convertNumber_to_words=convertNumber_to_words
+exports.array_to_string=array_to_string
