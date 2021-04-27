@@ -15,6 +15,10 @@ For example:
 ```
 node main.js 1 23 456 7890
 ```
+The output would be
+```
+One, TwoThree, FourFiveSix SevenEightNineZero
+```
 
 The auto test is using mocha framework. Just simply execute
 ```
